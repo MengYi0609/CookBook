@@ -1,0 +1,22 @@
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view wx:for="{{cookNav}}" wx:key="{{index}}" class="tab-item {{currentTab==0?'active':''}}" id="{{item.id}}" bindtap="swichNav">{{item.name}}</view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:1000rpx">
+    <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="*this">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="../../image/recipe06.jpg"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">鱼香肉丝</view>
+              <view class="tag">热菜</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
